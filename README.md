@@ -33,10 +33,10 @@
 
 - **Tecnologías Utilizadas:**
     
-    - React: Flexible y potente para interfaces de usuario interactivas.
-    - TypeScrip: Lenguaje principal para la lógica del lado del cliente.
-    - Styled Components: Utilizado para la personalización y estilo.
-    - Vite: Elegido por su rápido entorno de desarrollo.
+    - React
+    - TypeScript
+    - Styled Components
+    - Vite
     - Axios
     - Redux
 - **Dependencias:**
