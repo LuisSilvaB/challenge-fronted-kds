@@ -19,7 +19,9 @@ interface cardProps {
 }
 const Card:React.FC<cardProps> = ({order, options}) => {
   const dispatch = useDispatch();
-  const [orderInfo, SetOrderInfo] = useState<Order>(); 
+  const [orderInfo, SetOrderInfo] = useState<Order>(
+
+  ); 
   useEffect(() => {
     SetOrderInfo(order); 
   },[])
@@ -74,7 +76,7 @@ const Card:React.FC<cardProps> = ({order, options}) => {
   },[order])
 
   useEffect(() => {
-    dispatch(UpdateOrder(orderInfo));
+      if (orderInfo) {dispatch(UpdateOrder(orderInfo));}
   }, [dispatch, orderInfo]);
 
   return (
@@ -110,9 +112,9 @@ const Card:React.FC<cardProps> = ({order, options}) => {
       </CardDetails>
       <CardDetails flexdirection='column'>
         {
-          order.products.map((product, index) => {
+          order.products.map((product, index) => {            
             return (
-              <ProductOption key={index} type={'list'} product={product} order={order} disabledButton = {true}/>
+                <ProductOption key={index} type={'list'} product={product} order={order} disabledButton = {true} deleteProduct={()=>{}}/>
             )
           })
         }

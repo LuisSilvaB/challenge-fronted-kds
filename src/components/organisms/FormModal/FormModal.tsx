@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { IoCloseSharp } from "react-icons/io5";
 import { useSelector, useDispatch } from 'react-redux';
 import { Store } from '../../../interfaces/store';
-import { Meal, Meals } from '../../../interfaces/meals';
+import { Meal } from '../../../interfaces/meals';
 import { Order } from '../../../interfaces/order';
 import { FormShadow, FormContainer, Form, FormTitle, FormContent, Counter, ItemsList, CounterTitle, CounterList, SubTitle } from './FormModal.styles';
 import { AddOrder } from '../../../redux/features/order/orders';
@@ -14,7 +14,12 @@ interface FormModalProps {
   handleForm:() => void;
 }
 const FormModal:React.FC <FormModalProps> = ({handleForm}) => {
-  const [order, setOrder] = useState<Order>(); 
+  const [order, setOrder] = useState<Order>({
+    date: new Date().getTime().toString(),
+    id: '',
+    state: 'Current',
+    products: [] as Meal[],
+  }); 
   const [time, setTime] = useState<string>(); 
   const dispatch = useDispatch();
   const products = useSelector((state:Store) => state.products)
@@ -32,12 +37,12 @@ const FormModal:React.FC <FormModalProps> = ({handleForm}) => {
   }
 
   const dropProduct = (position:number) => {
-    const tempProductsList = order?.products.filter( (productOrder, index) => index !== position)
+    const tempProductsList = order?.products.filter( (_, index) => index !== position)
     setOrder({...order, products: tempProductsList});
   }
   const createOrder = () => {
     const date = new Date().getTime().toString();
-    const newOrder = {
+    const newOrder:Order = {
       ...order,
       date: date,
       state: 'Current',

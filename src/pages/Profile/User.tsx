@@ -1,4 +1,3 @@
-import React from 'react'
 import { UserContainer, UserLink, UserInfoContainer, UserImage, UserText, UserAndProjectInfo, UserContainerTechnologies, UserContainerButtons } from './User.styles';
 import { FaReact } from "react-icons/fa";
 import { SiStyledcomponents, SiRedux, SiTypescript } from "react-icons/si";

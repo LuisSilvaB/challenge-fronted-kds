@@ -10,10 +10,6 @@ interface SidebarOptionProps {
     onClickHandler: (option:string, params:string) => void;
 }
   
-interface RootState {
-    option: string;
-}
-  
 const SidebarOption:React.FC<SidebarOptionProps>  = ({title, icon, onClickHandler}) => {
   const [active, setActive] = useState<boolean>(false);
   const [countOrders, setCountOrders] = useState<number>(0);

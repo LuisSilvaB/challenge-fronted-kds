@@ -1,4 +1,3 @@
-import React from 'react'
 import { useRoutes } from 'react-router-dom';
 import DashboardPage from '../pages/Dashboard/Dashboard.page';
 import HistoryPage from '../pages/History/History.page';

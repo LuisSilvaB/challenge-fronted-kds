@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { FaBellConcierge } from "react-icons/fa6";
 import { BiLoader } from "react-icons/bi";
 import { IoCheckmarkCircleSharp } from "react-icons/io5";
@@ -6,14 +5,12 @@ import { GrHistory } from "react-icons/gr";
 import { SidebarContainer, SidebarTitle, SidebarList } from './Sidebar.styles';
 import { useDispatch } from 'react-redux';
 import { setOption } from '../../../redux/features/option/option';
-import { orderStatusNames } from '../../../utils/config';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { MdCancel } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import SidebarOption from '../../molecules/SidebarOption/SidebarOption';
 
  const Sidebar = () => {
-  const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   

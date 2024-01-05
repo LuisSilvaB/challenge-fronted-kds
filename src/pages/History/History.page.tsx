@@ -1,4 +1,3 @@
-import React from 'react'
 import { HistoryContainer } from './History.styles';
 import { useSelector } from 'react-redux';
 import { Store } from '../../interfaces/store';

@@ -16,29 +16,35 @@ interface ProductOptionContainerProps{
     disabledButton?:boolean;
 }
 
-const ProductOption:React.FC<ProductOptionContainerProps> = ({ type, product, order, setOrder, addProduct, deleteProduct, position, disabledButton }) => {
-
-    if (type === 'card') {        
+const ProductOption: React.FC<ProductOptionContainerProps> = ({ type, product, addProduct, deleteProduct, position, disabledButton }) => {
+    if (type === 'card' && addProduct) {
         return (
-          <ProductOptionContainer onClick={()=>{addProduct(product)}}>    
-              <ProductImg src={product.strMealThumb}></ProductImg>
-              <ProductName>{product.strMeal}</ProductName>
-              <ProductId>{product.idMeal}</ProductId>
-          </ProductOptionContainer>
-        )
-    }
-    if(type === 'list') {
-        return(
-        <ProductOptionContainerList onClick={()=>{deleteProduct(position)}}>
-            <ProductImgList src={product.strMealThumb} alt='ProductImg' />
-            <ProductNameList>{product.strMeal}</ProductNameList>
-            {
-                disabledButton ?<></>:<Button background='white' children = {<FaTrash  color = {'red'}/>} position='relative'></Button>
-            }
-        </ProductOptionContainerList>
-      )
+            <ProductOptionContainer onClick={() => {
+                if (product) {
+                    addProduct(product);
+                }
+            }}>
+                <ProductImg src={product.strMealThumb}></ProductImg>
+                <ProductName>{product.strMeal}</ProductName>
+                <ProductId>{product.idMeal}</ProductId>
+            </ProductOptionContainer>
+        );
     }
 
-}
+    if (type === 'list' && deleteProduct) {
+        return (
+            <ProductOptionContainerList onClick={() => {deleteProduct(position || 0); }}>
+                <ProductId>x1</ProductId>
+                <ProductImgList src={product.strMealThumb} alt='ProductImg' />
+                <ProductNameList>{product.strMeal}</ProductNameList>
+                {
+                    disabledButton ? <></> : <Button background='white' children={<FaTrash color={'red'} />} position='relative'></Button>
+                }
+            </ProductOptionContainerList>
+        );
+    }
 
-export default ProductOption; 
+    return null;
+};
+
+export default ProductOption;

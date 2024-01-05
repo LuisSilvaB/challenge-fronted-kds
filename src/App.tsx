@@ -1,17 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { AppStyle } from './App.styles'
 import { Outlet } from 'react-router-dom'
 import Sidebar from './components/organisms/Sidebar/Sidebar'
 import RoutesComponent from './routes/Routes'
-import { useSelector, useDispatch } from 'react-redux'
+import {useDispatch } from 'react-redux'
 import { getAllProducts } from './redux/features/meals/products'
-import { Store } from './interfaces/store'
-import { Meals } from './interfaces/meals'
+import { AppDispatch } from './redux/app/store';
 function App() {    
   
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   useEffect(()=>{
-      dispatch(getAllProducts()) 
+    dispatch(getAllProducts());
     },[dispatch])
 
   return (

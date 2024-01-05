@@ -1,8 +1,6 @@
 import React from 'react'
 import { DashboardListContainer, DashboardListInfo, DashboardListIndicator, DashboardListTitle, DashboardListItems } from './DashboardList.styles';
 import { Order } from '../../../interfaces/order';
-import { useDispatch } from 'react-redux';
-import { FilterOrder } from '../../../redux/features/order/orders';
 import Card from '../card/Card';
 interface DashboardListProps{
     options:{
