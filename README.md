@@ -1,30 +1,53 @@
-# React + TypeScript + Vite
+**Sistema de Visualización de Cocina (KDS) - Aplicación Web**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Web** 🌐 https://challenge-fronted-kds.vercel.app/
 
-Currently, two official plugins are available:
+**Instrucciones de Configuración y Ejecución**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clonar el repositorio: `git clone https://github.com/LuisSilvaB/challenge-fronted-kds.git`
+2. Instalar dependencias: `npm install`
+3. Ejecutar la aplicación: `npm run dev`
 
-## Expanding the ESLint configuration
+**Descripción del Proyecto** Reto de Desarrollo Frontend en React.js para un Kitchen Display System (KDS) - Versión Simplificada. Esta aplicación de gestión de tareas, construida con Vite, te permite registrar el estado de pedidos de manera eficiente. Proporciona una interfaz intuitiva para organizar y realizar un seguimiento de las actividades.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**Capturas de Pantalla**
+  ![635shots_so](https://github.com/LuisSilvaB/challenge-fronted-kds/assets/104279834/34fdc46b-8d5c-45a7-8605-319b826d0c39)
+  
+**Estructura del Proyecto** El proyecto está organizado en el directorio `src` de manera modular:
 
-- Configure the top-level `parserOptions` property like this:
+**📁src:** Directorio principal que contiene el código fuente de la aplicación.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- **App.styles.ts, App.tsx:** Archivos principales de la aplicación.
+- **📁assets:** Directorio para archivos estáticos.
+- **📁components:** Directorio principal para componentes reutilizables.
+- **index.css:** Archivo de estilo global.
+- **📁interfaces:** Directorio para definiciones de interfaces TypeScript.
+- **main.tsx:** Archivo principal de entrada.
+- **📁pages:** Directorio para componentes relacionados con páginas específicas.
+- **📁redux:** Directorio para la gestión del estado global con Redux.
+- **📁routes:** Directorio para configuración de rutas.
+- **📁utils:** Directorio para utilidades y configuraciones generales.
+- **vite-env.d.ts:** Archivo de definiciones TypeScript relacionado con Vite.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**Justificación Tecnológica**
+
+- **Tecnologías Utilizadas:**
+    
+    - React: Flexible y potente para interfaces de usuario interactivas.
+    - TypeScrip: Lenguaje principal para la lógica del lado del cliente.
+    - Styled Components: Utilizado para la personalización y estilo.
+    - Vite: Elegido por su rápido entorno de desarrollo.
+    - Axios
+    - Redux
+- **Dependencias:**
+    - React Icons
+    - React router doom
+    - Axios
+    - Redux
+    - Moment
+
+
+**Decisiones de Diseño**
+
+- La estructura modular mejora el mantenimiento y la escalabilidad.
+- Vite es elegido por su rápido y eficiente entorno de desarrollo.
