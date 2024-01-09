@@ -26,10 +26,10 @@ export const CardContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 90%;
     height: fit-content;
     @media screen and (max-width: 468px) {
-        width: 70%;
+        width: 80%;
         min-width: 100px;
     }
 `; 

@@ -29,7 +29,7 @@ export const Form = styled.div`
     position: absolute;
     width: 80%;
     min-width:200px;
-    height: 800px;
+    height: 90%;
     display: flex;
     background:white;
     flex-direction: column;
